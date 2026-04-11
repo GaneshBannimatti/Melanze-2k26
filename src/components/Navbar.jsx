@@ -7,8 +7,9 @@ export default function Navbar() {
 
   const [activeItem, setActiveItem] = useState("Home");
   const [mobileOpen, setMobileOpen] = useState(false);
+  const [scrolled, setScrolled] = useState(false);
 
-  // ✅ SCROLL FUNCTION (NOW WORKS)
+  // ✅ Smooth Scroll Function
   const scrollToSection = (name) => {
     setMobileOpen(false);
 
@@ -28,7 +29,17 @@ export default function Navbar() {
     });
   };
 
-  // ✅ ACTIVE SECTION TRACKING
+  // ✅ Detect Scroll for Navbar Effect
+  useEffect(() => {
+    const handleScroll = () => {
+      setScrolled(window.scrollY > 50);
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
+  // ✅ Active Section Tracking
   useEffect(() => {
     const setupObserver = () => {
       const sections = items
@@ -66,45 +77,61 @@ export default function Navbar() {
   return (
     <header className="fixed top-0 left-0 w-full z-50">
       
-      <div className="flex items-center justify-between px-4 sm:px-6 md:px-10 py-3 bg-black/80 backdrop-blur-md shadow-lg">
-        
-        {/* LOGO */}
-        <img
-          src={svmaLogo}
-          alt="College Logo"
-          className="h-8 sm:h-10 md:h-12"
-        />
+      {/* NAVBAR BACKGROUND */}
+      <div
+        className={`transition-all duration-300 ${
+          scrolled ? "bg-black/90 shadow-xl" : "bg-black/70"
+        } backdrop-blur-md`}
+      >
+        {/* CONTAINER */}
+        <div className="max-w-7xl mx-auto flex items-center justify-between px-6 py-3">
+          
+          {/* LOGO */}
+          <div className="flex items-center gap-2">
+            <img
+              src={svmaLogo}
+              alt="College Logo"
+              className="h-10 w-auto object-contain hover:scale-105 transition"
+            />
+          </div>
 
-        {/* DESKTOP MENU */}
-        <div className="hidden md:flex flex-1 justify-center">
-          <SparkleNavbar
-            items={items}
-            color="#22d3ee"
-            onItemClick={scrollToSection}
-            activeItem={activeItem}
-          />
+          {/* DESKTOP MENU */}
+          <div className="hidden md:flex flex-1 justify-center">
+            <SparkleNavbar
+              items={items}
+              color="#22d3ee"
+              onItemClick={scrollToSection}
+              activeItem={activeItem}
+            />
+          </div>
+
+          {/* RIGHT SIDE */}
+          <div className="flex items-center gap-4">
+            
+            {/* APPLY BUTTON */}
+            <button
+              onClick={() => scrollToSection("Events")}
+              className="hidden sm:block bg-cyan-400 text-black px-5 py-2 rounded-xl font-semibold hover:bg-cyan-300 transition shadow-md"
+            >
+              Apply
+            </button>
+
+            {/* MOBILE MENU BUTTON */}
+            <button
+              className="md:hidden text-white text-2xl"
+              onClick={() => setMobileOpen(!mobileOpen)}
+            >
+              ☰
+            </button>
+          </div>
+
         </div>
-
-        {/* APPLY BUTTON */}
-        <button
-          onClick={() => scrollToSection("Events")}
-          className="hidden sm:block bg-cyan-400 text-black px-5 py-2 rounded-xl font-semibold hover:bg-cyan-300 transition"
-        >
-          Apply
-        </button>
-
-        {/* MOBILE MENU */}
-        <button
-          className="md:hidden text-white text-2xl"
-          onClick={() => setMobileOpen(!mobileOpen)}
-        >
-          ☰
-        </button>
       </div>
 
+      {/* MOBILE MENU */}
       {mobileOpen && (
-        <div className="md:hidden bg-black text-white p-4">
-          <ul className="flex flex-col gap-4 text-center text-lg">
+        <div className="md:hidden bg-black/95 backdrop-blur-lg text-white p-5 border-t border-gray-800">
+          <ul className="flex flex-col gap-5 text-center text-lg">
 
             {items.map((item) => (
               <li key={item}>

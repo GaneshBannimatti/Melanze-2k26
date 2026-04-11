@@ -1,100 +1,54 @@
-import React, { useRef, useLayoutEffect, useEffect } from "react";
-import gsap from "gsap";
+import React from "react";
 
-const SparkleNavbar = ({
+export default function SparkleNavbar({
   items,
-  color = "#22d3ee",
-  onItemClick,
   activeItem,
-}) => {
-  const navRef = useRef(null);
-  const activeElementRef = useRef(null);
-  const buttonRefs = useRef([]);
-
-  const getOffsetLeft = (el) => {
-    if (!navRef.current || !el) return 0;
-
-    const navRect = navRef.current.getBoundingClientRect();
-    const elRect = el.getBoundingClientRect();
-
-    return elRect.left - navRect.left + elRect.width / 2 - 18;
-  };
-
-  // ✅ INITIAL POSITION
-  useLayoutEffect(() => {
-    const index = items.indexOf(activeItem);
-    const btn = buttonRefs.current[index >= 0 ? index : 0];
-
-    if (!btn) return;
-
-    gsap.set(activeElementRef.current, {
-      x: getOffsetLeft(btn),
-      opacity: 1,
-    });
-  }, [items, activeItem]);
-
-  // ✅ UPDATE ON ACTIVE CHANGE
-  useEffect(() => {
-    const index = items.indexOf(activeItem);
-    const btn = buttonRefs.current[index];
-
-    if (!btn) return;
-
-    gsap.to(activeElementRef.current, {
-      x: getOffsetLeft(btn),
-      duration: 0.4,
-      ease: "power3.out",
-    });
-  }, [activeItem, items]);
-
-  // ✅ CLICK HANDLER
-  const handleClick = (index) => {
-    onItemClick?.(items[index]);
-
-    const btn = buttonRefs.current[index];
-    if (!btn) return;
-
-    gsap.to(activeElementRef.current, {
-      x: getOffsetLeft(btn),
-      duration: 0.5,
-      ease: "power3.out",
-    });
-  };
-
+  onItemClick,
+  color = "#22d3ee",
+}) {
   return (
-    <nav
-      ref={navRef}
-      className="relative flex items-center justify-center"
-    >
-      <ul className="flex gap-6 md:gap-10">
-        {items.map((item, i) => (
+    <nav className="relative">
+      <ul className="flex items-center gap-10 text-gray-300 font-medium">
+
+        {items.map((item) => (
           <li key={item}>
             <button
-              ref={(el) => (buttonRefs.current[i] = el)}
-              onClick={() => handleClick(i)}
-              className={`text-sm md:text-base transition duration-300 ${
-                activeItem === item
-                  ? "text-white"
-                  : "text-gray-400 hover:text-white"
-              }`}
+              onClick={() => onItemClick(item)}
+              className="relative group transition duration-300"
             >
-              {item}
+              {/* TEXT */}
+              <span
+                className={`px-2 transition ${
+                  activeItem === item
+                    ? "text-white"
+                    : "hover:text-white"
+                }`}
+              >
+                {item}
+              </span>
+
+              {/* ✅ CENTERED UNDERLINE (FIXED) */}
+              {activeItem === item && (
+                <span
+                  className="absolute -bottom-1 left-1/2 -translate-x-1/2 h-[2px] w-6 rounded-full transition-all duration-300"
+                  style={{
+                    background: color,
+                    boxShadow: `0 0 8px ${color}`,
+                  }}
+                ></span>
+              )}
+
+              {/* OPTIONAL HOVER GLOW */}
+              <span className="absolute inset-0 opacity-0 group-hover:opacity-100 transition duration-300 blur-md"
+                style={{
+                  background: color,
+                }}
+              ></span>
             </button>
           </li>
         ))}
-      </ul>
 
-      {/* 🔥 ACTIVE LINE */}
-      <div
-        ref={activeElementRef}
-        className="absolute bottom-[-6px] w-9 h-[3px] rounded-full"
-        style={{
-          background: color,
-          boxShadow: `0 0 12px ${color}, 0 0 24px ${color}`,
-        }}
-      />
+      </ul>
     </nav>
   );
-};
-
-export default SparkleNavbar;
+}
