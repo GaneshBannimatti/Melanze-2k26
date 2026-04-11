@@ -3,9 +3,55 @@ import FoldSection from "./FoldSection";
 
 export default function Team() {
   const members = [
-    { id: "1", name: "Dr. Parashuram Baraki", role: "Principal & Mentor", image: "/team/parashuram.jpg" },
-    { id: "2", name: "Dr. Girish G. Y", role: "Chief Organizer", image: "/team/girish.jpg" },
-    { id: "3", name: "Dr. Subhash Meti", role: "Dean of Academic", image: "/team/subhash.jpg" },
+    // ✅ 1. PRINCIPAL & MENTOR
+    {
+      id: "1",
+      name: "Dr. Parashuram Barak",
+      role: "Principal & Chief Mentor",
+      phone: "+91 96860 42385",
+      image: "/team/parashuram.jpg",
+    },
+
+    // ✅ 2. CHIEF ORGANIZER
+    {
+      id: "2",
+      name: "Dr. Girish G Yattinahalli",
+      role: "Chief Organizer",
+      phone: "+91 9844950991",
+      image: "/team/girish.jpg",
+    },
+
+    // ✅ 3. CHIEF ADVISOR
+    {
+      id: "3",
+      name: "Dr. Subhas Meti",
+      role: "Chief Advisor",
+      phone: "+91 9845675725",
+      image: "/team/subhash.jpg",
+    },
+
+    // ✅ 4. CHIEF COORDINATORS
+    {
+      id: "4",
+      name: "Mr. Iranna Makarabbi",
+      role: "Chief Coordinator",
+      phone: "+91 88677 01426",
+      image: "/team/default.jpg",
+    },
+    {
+      id: "5",
+      name: "Mrs. Prathima Mahapurush",
+      role: "Chief Coordinator",
+      phone: "+91 98457 89768",
+      image: "/team/default.jpg",
+    },
+    {
+      id: "6",
+      name: "Mr. Girish Halli",
+      role: "Chief Coordinator",
+      phone: "+91 99455 64813",
+      image: "/team/default.jpg",
+    },
   ];
 
   return (

@@ -22,8 +22,8 @@ export default function TeamCarousel({ members, autoPlay = 3000 }) {
         {/* Glow */}
         <div className="absolute inset-0 rounded-3xl bg-cyan-400/20 blur-2xl group-hover:blur-3xl transition duration-300"></div>
 
-        {/* Border Glow */}
-        <div className="absolute inset-0 rounded-3xl border border-cyan-400/20"></div>
+        {/* Border */}
+        <div className="absolute inset-0 rounded-3xl border border-cyan-400/30"></div>
 
         {/* Card */}
         <div
@@ -40,6 +40,7 @@ export default function TeamCarousel({ members, autoPlay = 3000 }) {
           <img
             src={member.image}
             alt={member.name}
+            onError={(e) => (e.target.src = "/team/default.jpg")} // ✅ fallback
             className="w-full h-full object-cover"
           />
         </div>
@@ -51,17 +52,29 @@ export default function TeamCarousel({ members, autoPlay = 3000 }) {
       </h3>
 
       {/* ROLE */}
-      <p className="text-gray-400 text-sm">
+      <p className="text-gray-300 text-sm mt-1">
         {member.role}
       </p>
 
+      {/* ✅ PHONE NUMBER */}
+      <p className="text-cyan-300 text-sm mt-1">
+        {member.phone}
+      </p>
+
       {/* NAV BUTTONS */}
-      <div className="flex gap-4 mt-6">
+      <div className="flex gap-6 mt-6">
+
         <button
           onClick={() =>
             setIndex((prev) => (prev - 1 + members.length) % members.length)
           }
-          className="px-3 py-1 bg-cyan-500/20 rounded hover:bg-cyan-500/40"
+          className="
+            px-4 py-2
+            bg-cyan-500/20
+            rounded-full
+            hover:bg-cyan-500/40
+            transition
+          "
         >
           ◀
         </button>
@@ -70,10 +83,17 @@ export default function TeamCarousel({ members, autoPlay = 3000 }) {
           onClick={() =>
             setIndex((prev) => (prev + 1) % members.length)
           }
-          className="px-3 py-1 bg-cyan-500/20 rounded hover:bg-cyan-500/40"
+          className="
+            px-4 py-2
+            bg-cyan-500/20
+            rounded-full
+            hover:bg-cyan-500/40
+            transition
+          "
         >
           ▶
         </button>
+
       </div>
     </div>
   );

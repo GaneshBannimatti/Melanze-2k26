@@ -8,104 +8,115 @@ const eventData = {
     prize: "Exclusive Prizes + Certificates",
     rules: [
       "Team of 2 members",
-      "Bring your own laptop & internet",
-      "Only one team per participant",
-      "Judge decision is final",
+      "Bring your own laptop",
+      "One team per participant",
     ],
     coordinators: [
-      "Malatesh Y – 8296256433",
-      "Rakshita P – 6366184580",
-      "Sneha D – 9008340636",
+      "Malatesh – 8296256433",
+      "Rakshita – 6366184580",
     ],
     link: "https://tinyurl.com/GAMEATHON-1-O",
   },
 
   "lagori": {
-    title: "Lagori Logic Ladder",
+    title: "Logic Ladder",
     date: "April 25 & 26, 2026",
     fee: "₹100 / team",
-    prize: "Exclusive Prizes + Certificates",
+    prize: "Certificates + Prizes",
     rules: [
-      "Team of 3 members",
-      "3 chances to build stack",
+      "Team of 3",
+      "3 chances",
       "Puzzle round if tie",
-      "Umpire decision is final",
     ],
     coordinators: [
-      "Akshay T – 9620584272",
-      "Aditya S – 8073863536",
+      "Akshay – 9620584272",
+      "Aditya – 8073863536",
     ],
     link: "https://tinyurl.com/L3-Lagori-Logic-Ladder",
   },
 
   "electroeye": {
-    title: "Electroeye Q",
+    title: "Electro Eye",
     date: "April 24, 2026",
     fee: "₹150 / team",
-    prize: "Exclusive Prizes + Certificates",
+    prize: "Certificates + Prizes",
     rules: [
-      "Max 3 members",
-      "5 rounds (Quiz, Circuit, Treasure Hunt)",
-      "Hints provided",
-      "Final decision by committee",
+      "3 members max",
+      "5 rounds",
+      "Quiz + circuit",
     ],
     coordinators: [
-      "Naveen A – 9380625868",
-      "Aditya H – 9164092286",
+      "Naveen – 9380625868",
     ],
     link: "https://forms.gle/vmGuoEzceMHgfQig9",
   },
 
   "triple-trio": {
-    title: "Triple Trio Arena",
+    title: "Triple Trio",
     date: "April 25, 2026",
     fee: "₹199 / team",
-    prize: "Exclusive Prizes + Certificates",
+    prize: "Prizes + Certificates",
     rules: [
-      "Max 4 members",
-      "3 rounds (Goal, Cricket, Sweet Attack)",
-      "Highest score qualifies",
-      "Time limited rounds",
+      "4 members max",
+      "3 rounds",
     ],
     coordinators: [
-      "Chetangouda – 7411411643",
-      "Aakash – 8618341712",
+      "Chetan – 7411411643",
     ],
     link: "https://forms.gle/XTRaPNSr9DqnS8z2A",
   },
 
   "tech-puzzle": {
-    title: "Technical Puzzle",
+    title: "Tech Puzzle",
     date: "April 2026",
-    fee: "₹100 / team",
-    prize: "Certificates + Prizes",
-    rules: [
-      "2 participants per team",
-      "Identify machine parts",
-      "No mobile allowed",
-      "Judges decision final",
-    ],
-    coordinators: [
-      "Yeshwanth D – 8088638569",
-      "S Manoj – 9036671530",
-    ],
+    fee: "₹100",
+    prize: "Certificates",
+    rules: ["2 participants", "No mobile"],
+    coordinators: ["Yeshwanth"],
   },
 
   "mini-cricket": {
-    title: "Mini Boundary Cricket",
+    title: "Mini Cricket",
     date: "April 2026",
-    fee: "₹360 / team",
-    prize: "Exciting Prizes",
+    fee: "₹360",
+    prize: "Exciting prizes",
+    rules: ["6 players", "5 overs"],
+    coordinators: ["Gopal"],
+  },
+
+  // ✅ NEW EVENTS
+
+  "blind-coding": {
+    title: "Blind Coding",
+    date: "April 25, 2026",
+    fee: "₹250 / team",
+    prize: "Exclusive Prizes + Certificates",
     rules: [
-      "6 players per team",
-      "5 overs match",
-      "Underarm bowling only",
-      "Super over if tie",
+      "Max 2 members",
+      "AI prompt-based challenge",
+      "Landing page creation",
     ],
     coordinators: [
-      "Gopalkrishna – 8618294189",
-      "Rakesh G – 9019491292",
+      "Vijay – 7795099859",
+      "Radha – 8277803043",
     ],
+    link: "https://docs.google.com/forms/d/e/1FAIpQLSe7MILMc9kZs51WpKj4sNH-D4LKii7nfyMatLgzK9CpSv399A/viewform",
+  },
+
+  "scan-seek": {
+    title: "Scan and Seek",
+    date: "April 25, 2026",
+    fee: "₹250 / team",
+    prize: "Certificates + Prizes",
+    rules: [
+      "2–4 members",
+      "QR hunt",
+      "Treasure challenge",
+    ],
+    coordinators: [
+      "Vishwa – 8431487492",
+    ],
+    link: "https://forms.gle/YZgZN8fEWEndEuqp8",
   },
 };
 
@@ -120,43 +131,30 @@ export default function EventDetails() {
   return (
     <section className="min-h-screen px-4 py-20 text-white text-center">
 
-      <h1 className="text-4xl sm:text-6xl font-bold text-cyan-400 mb-6">
+      <h1 className="text-4xl font-bold text-cyan-400 mb-6">
         {event.title}
       </h1>
 
-      <p className="text-gray-300 mb-6">{event.date}</p>
+      <p className="mb-4">{event.date}</p>
 
-      {/* INFO */}
-      <div className="max-w-3xl mx-auto bg-white/10 backdrop-blur-md p-6 rounded-xl border border-cyan-400/20">
+      <div className="max-w-2xl mx-auto bg-white/10 p-6 rounded-xl">
 
-        <p className="mb-2"><strong>Registration Fee:</strong> {event.fee}</p>
-        <p className="mb-4"><strong>Prize:</strong> {event.prize}</p>
+        <p><strong>Fee:</strong> {event.fee}</p>
+        <p><strong>Prize:</strong> {event.prize}</p>
 
-        {/* RULES */}
-        <h2 className="text-xl text-cyan-400 mb-3">Rules</h2>
-        <ul className="text-gray-300 text-left list-disc pl-6">
-          {event.rules.map((rule, i) => (
-            <li key={i}>{rule}</li>
-          ))}
+        <ul className="text-left mt-4">
+          {event.rules.map((r, i) => <li key={i}>• {r}</li>)}
         </ul>
 
-        {/* COORDINATORS */}
-        <h2 className="text-xl text-cyan-400 mt-6 mb-3">Coordinators</h2>
-        <ul className="text-gray-300">
+        <div className="mt-4">
           {event.coordinators.map((c, i) => (
-            <li key={i}>{c}</li>
+            <p key={i}>{c}</p>
           ))}
-        </ul>
+        </div>
 
-        {/* BUTTON */}
         {event.link && (
-          <a
-            href={event.link}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="inline-block mt-6 px-6 py-3 bg-cyan-400 text-black rounded-lg"
-          >
-            Register Now
+          <a href={event.link} target="_blank" className="mt-6 inline-block bg-cyan-400 px-4 py-2 rounded text-black">
+            Register
           </a>
         )}
 

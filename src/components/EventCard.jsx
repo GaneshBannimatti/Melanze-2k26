@@ -2,24 +2,22 @@ import React from "react";
 import styled from "styled-components";
 
 export default function EventCard({ title, img, onRegister }) {
-  console.log("IMAGE PATH:", img); // ✅ DEBUG
-
   return (
     <StyledWrapper>
-      <article className="article-wrapper">
+      <article className="card">
 
         {/* IMAGE */}
-        <div className="container-project">
+        <div className="image-container">
           <img src={img} alt={title} />
         </div>
 
-        {/* INFO */}
-        <div className="project-info">
+        {/* CONTENT */}
+        <div className="content">
 
-          <div className="flex-pr">
-            <div className="project-title">{title}</div>
+          <div className="top">
+            <h3>{title}</h3>
 
-            <div className="project-hover" onClick={onRegister}>
+            <div className="arrow" onClick={onRegister}>
               →
             </div>
           </div>
@@ -35,57 +33,64 @@ export default function EventCard({ title, img, onRegister }) {
 }
 
 const StyledWrapper = styled.div`
-  .article-wrapper {
+  .card {
     width: 100%;
-    border-radius: 12px;
-    padding: 6px;
-    cursor: pointer;
-    background-color: white;
-  }
-
-  .container-project {
-    width: 100%;
-    height: 160px;
-    border-radius: 10px;
+    max-width: 360px;
+    border-radius: 18px;
     overflow: hidden;
-    background: red; /* ✅ TEMP TEST */
+    background: rgba(255, 255, 255, 0.08);
+    backdrop-filter: blur(12px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    transition: all 0.3s ease;
   }
 
-  .container-project img {
+  .card:hover {
+    transform: translateY(-8px) scale(1.02);
+    box-shadow: 0 20px 40px rgba(34, 211, 238, 0.25);
+  }
+
+  .image-container {
+    width: 100%;
+    height: 180px;
+    overflow: hidden;
+  }
+
+  .image-container img {
     width: 100%;
     height: 100%;
     object-fit: cover;
   }
 
-  .project-info {
-    padding: 10px;
+  .content {
+    padding: 16px;
+    color: white;
   }
 
-  .project-title {
-    font-size: 18px;
-    font-weight: bold;
-    color: black;
-  }
-
-  .flex-pr {
+  .top {
     display: flex;
     justify-content: space-between;
     align-items: center;
   }
 
-  .project-hover {
-    width: 35px;
-    height: 35px;
+  h3 {
+    font-size: 18px;
+    font-weight: 600;
+  }
+
+  .arrow {
+    width: 36px;
+    height: 36px;
     background: #22d3ee;
     border-radius: 50%;
     display: flex;
     align-items: center;
     justify-content: center;
+    cursor: pointer;
   }
 
   .btn {
-    margin-top: 10px;
-    padding: 6px;
+    margin-top: 12px;
+    padding: 8px 14px;
     border-radius: 20px;
     border: 1px solid #22d3ee;
     background: transparent;
