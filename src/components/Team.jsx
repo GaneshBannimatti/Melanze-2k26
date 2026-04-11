@@ -1,9 +1,7 @@
 import TeamCarousel from "./TeamCarousel";
-import FoldSection from "./FoldSection";
 
 export default function Team() {
   const members = [
-    // ✅ 1. PRINCIPAL & MENTOR
     {
       id: "1",
       name: "Dr. Parashuram Barak",
@@ -11,8 +9,6 @@ export default function Team() {
       phone: "+91 96860 42385",
       image: "/team/parashuram.jpg",
     },
-
-    // ✅ 2. CHIEF ORGANIZER
     {
       id: "2",
       name: "Dr. Girish G Yattinahalli",
@@ -20,8 +16,6 @@ export default function Team() {
       phone: "+91 9844950991",
       image: "/team/girish.jpg",
     },
-
-    // ✅ 3. CHIEF ADVISOR
     {
       id: "3",
       name: "Dr. Subhas Meti",
@@ -29,8 +23,6 @@ export default function Team() {
       phone: "+91 9845675725",
       image: "/team/subhash.jpg",
     },
-
-    // ✅ 4. CHIEF COORDINATORS
     {
       id: "4",
       name: "Mr. Iranna Makarabbi",
@@ -55,19 +47,17 @@ export default function Team() {
   ];
 
   return (
-    <FoldSection>
-      <section
-        id="team"
-        className="relative py-16 sm:py-24 text-white z-10 px-4"
-      >
-        <h2 className="text-3xl sm:text-5xl text-center font-bold mb-12 sm:mb-16">
-          Our <span className="text-cyan-400">Team</span>
-        </h2>
+    <section
+      id="team"
+      className="relative py-24 text-white z-10 px-4 mt-10"
+    >
+      <h2 className="text-4xl text-center font-bold mb-14">
+        Our <span className="text-cyan-400">Team</span>
+      </h2>
 
-        <div className="max-w-xl mx-auto">
-          <TeamCarousel members={members} />
-        </div>
-      </section>
-    </FoldSection>
+      <div className="max-w-xl mx-auto">
+        <TeamCarousel members={members} />
+      </div>
+    </section>
   );
 }

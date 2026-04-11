@@ -27,14 +27,16 @@ export default function App() {
   }, []);
 
   return (
-    <div className="flex flex-col min-h-screen">
+    <div className="relative min-h-screen bg-black text-white">
 
-      {/* BACKGROUND */}
-      <ParticleBackground />
+      {/* ✅ BACKGROUND FIXED */}
+      <div className="fixed inset-0 -z-10">
+        <ParticleBackground />
+      </div>
 
       <Navbar />
 
-      <main className="flex-grow relative z-10 text-white pt-20">
+      <main className="relative z-10 pt-20">
         <Routes>
 
           <Route
@@ -43,14 +45,13 @@ export default function App() {
               <>
                 <Hero />
                 <About />
-                <Themes />
-                <Team />
+                <Themes />   {/* ✅ EVENTS */}
+                <Team />     {/* ✅ TEAM */}
               </>
             }
           />
 
           <Route path="/event/:id" element={<EventDetails />} />
-
           <Route path="*" element={<Navigate to="/" />} />
 
         </Routes>
