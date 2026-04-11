@@ -12,9 +12,9 @@ export default function Themes() {
     { id: "tech-puzzle", title: "Tech Puzzle", img: "/events/mech1.jpg" },
     { id: "mini-cricket", title: "Mini Cricket", img: "/events/mech2.jpg" },
 
-    // ✅ NEW EVENTS
-    { id: "blind-coding", title: "Blind Coding", img: "/events/cse1.jpg" },
-    { id: "scan-seek", title: "Scan and Seek", img: "/events/cse2.jpg" },
+    // ✅ ISE EVENTS (CORRECTED)
+    { id: "blind-coding", title: "Blind Coding (ISE)", img: "/events/ise1.jpg" },
+    { id: "scan-seek", title: "Scan & Seek (ISE)", img: "/events/ise2.jpg" },
   ];
 
   return (
