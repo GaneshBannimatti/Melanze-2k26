@@ -35,14 +35,14 @@ export default function Team() {
       name: "Mrs. Prathima Mahapurush",
       role: "Chief Coordinator",
       phone: "+91 98457 89768",
-      image: "/team/default.jpg",
+      image: "/team/prathima.jpg",
     },
     {
       id: "6",
       name: "Mr. Girish Halli",
       role: "Chief Coordinator",
       phone: "+91 99455 64813",
-      image: "/team/default.jpg",
+      image: "/team/halli.jpg",
     },
   ];
 
