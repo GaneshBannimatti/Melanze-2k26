@@ -5,16 +5,19 @@ export default function Themes() {
   const navigate = useNavigate();
 
   const events = [
-    { id: "tech-byte", title: "Tech Byte", img: "/events/cse1.jpg" },
-    { id: "lagori", title: "Logic Ladder", img: "/events/cse2.jpg" },
-    { id: "electroeye", title: "Electro Eye", img: "/events/eee1.jpg" },
-    { id: "triple-trio", title: "Triple Trio", img: "/events/eee2.jpg" },
-    { id: "tech-puzzle", title: "Tech Puzzle", img: "/events/mech1.jpg" },
-    { id: "mini-cricket", title: "Mini Cricket", img: "/events/mech2.jpg" },
+    { id: "tech-byte", title: "Tech Byte(CSE)", img: "/events/cse1.jpg" },
+    { id: "lagori", title: "Lagory Logic Ladder(CSE)", img: "/events/cse2.jpg" },
+    { id: "electroeye", title: "Electro Eye Q(EEE)", img: "/events/eee1.jpg" },
+    { id: "triple-trio", title: "Triple Trio Arena(EEE)", img: "/events/eee2.jpg" },
+    { id: "tech-puzzle", title: "Tech Puzzle(MECH)", img: "/events/mech1.jpg" },
+    { id: "mini-cricket", title: "Mini Boundry Cricket(MECH)", img: "/events/mech2.jpg" },
 
-    // ✅ ISE EVENTS (CORRECTED)
+    // ✅ ISE EVENTS
     { id: "blind-coding", title: "Blind Coding (ISE)", img: "/events/ise1.jpg" },
     { id: "scan-seek", title: "Scan & Seek (ISE)", img: "/events/ise2.jpg" },
+
+    // ✅ CULTURAL EVENTS (SINGLE CARD)
+    { id: "cultural", title: "Cultural Events", img: "/events/cultural.jpg" },
   ];
 
   return (

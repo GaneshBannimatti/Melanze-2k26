@@ -84,7 +84,7 @@ const eventData = {
     coordinators: ["Gopal"],
   },
 
-  // ✅ NEW EVENTS
+  // ✅ ISE EVENTS
 
   "blind-coding": {
     title: "Blind Coding",
@@ -118,6 +118,30 @@ const eventData = {
     ],
     link: "https://forms.gle/YZgZN8fEWEndEuqp8",
   },
+
+  // ✅ CULTURAL EVENTS (SINGLE PAGE)
+
+  "cultural": {
+    title: "Cultural Events",
+    date: "April 2026",
+    fee: "Varies per event",
+    prize: "Certificates + Prizes",
+
+    rules: [
+      "Singing (Solo) – ₹300 (6 min)",
+      "Dance (Solo) – ₹500 (10 min)",
+      "Skit / Mime – ₹500 per group (15 min)",
+      "Instrumental (Solo) – ₹300 (5 min)",
+      "Instrumental (Group) – ₹700 per group (10 min)",
+      "Fashion Show – ₹1000 per group (15 min)",
+    ],
+
+    coordinators: [
+      "Prof. Shambulingappa – 9686634981",
+    ],
+
+    link: "https://forms.cloud.microsoft/r/SdNq4q9Jdk",
+  },
 };
 
 export default function EventDetails() {
@@ -142,7 +166,7 @@ export default function EventDetails() {
         <p><strong>Fee:</strong> {event.fee}</p>
         <p><strong>Prize:</strong> {event.prize}</p>
 
-        <ul className="text-left mt-4">
+        <ul className="text-left mt-4 space-y-2">
           {event.rules.map((r, i) => <li key={i}>• {r}</li>)}
         </ul>
 
@@ -153,8 +177,13 @@ export default function EventDetails() {
         </div>
 
         {event.link && (
-          <a href={event.link} target="_blank" className="mt-6 inline-block bg-cyan-400 px-4 py-2 rounded text-black">
-            Register
+          <a
+            href={event.link}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="mt-6 inline-block bg-cyan-400 px-6 py-3 rounded text-black font-semibold"
+          >
+            Register Now
           </a>
         )}
 
