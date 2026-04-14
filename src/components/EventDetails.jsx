@@ -418,12 +418,12 @@ const eventData = {
     prize: "Certificates + Prizes",
 
     rules: [
-      "Singing (Solo) – ₹300 (6 min)",
-      "Dance (Solo) – ₹500 (10 min)",
-      "Skit / Mime – ₹500 per group (15 min)",
-      "Instrumental (Solo) – ₹300 (5 min)",
-      "Instrumental (Group) – ₹700 per group (10 min)",
-      "Fashion Show – ₹1000 per group (15 min)",
+      "Singing (Solo) – ₹300",
+      "Dance (Solo) – ₹500",
+      "Skit / Mime – ₹500 per group",
+      "Instrumental (Solo) – ₹300",
+      "Instrumental (Group) – ₹700 per group",
+      "Fashion Show – ₹1000 per group",
     ],
 
     coordinators: [
