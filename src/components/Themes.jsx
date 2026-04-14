@@ -16,7 +16,11 @@ export default function Themes() {
     { id: "blind-coding", title: "Blind Coding (ISE)", img: "/events/ise1.jpg" },
     { id: "scan-seek", title: "Scan & Seek (ISE)", img: "/events/ise2.jpg" },
 
-    // ✅ CULTURAL EVENTS (SINGLE CARD)
+    // ✅ NEW ECE EVENTS
+    { id: "festronics", title: "FESTRONICS (ECE)", img: "/events/ece1.jpg" },
+    { id: "roborace", title: "ROBORACE (ECE)", img: "/events/ece2.jpg" },
+
+    // ✅ CULTURAL EVENTS
     { id: "cultural", title: "Cultural Events", img: "/events/cultural.jpg" },
   ];
 
