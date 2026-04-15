@@ -491,6 +491,79 @@ const eventData = {
       "Prof. Manjunathraddi Bentur – 8867707197"
     ]
   },
+  "roadies": {
+    title: "Super Minute Games (Roadies)",
+    date: "April 2026",
+    fee: "₹200 / team",
+    prize: "1st: ₹2000 | 2nd: ₹1000",
+    image: "ece1.jpg",
+
+    rules: [
+      "A maximum of 2 players can participate in a team",
+      "Organizer’s decision is final",
+      "Players in one team cannot play in another team",
+      "First aid facility will be available",
+      "No use of cell phones is allowed",
+      "There will be two rounds",
+      "Top 5 teams qualify for Round 2",
+      "Task details will be explained at the start",
+      "Remaining rules will be explained at venue"
+    ],
+
+    tie: "Tie breaking task will be conducted between teams",
+
+    coordinators: [
+      "Manojgouda V D – 8150893120",
+      "Maitri D – 9380415952",
+      "Pavankumar B – 9986039738",
+      "Rajeshwari B – 8088798536"
+    ],
+
+    staff: [
+      "Prof. Manjunath Manavalli – 8970621530",
+      "Prof. Laxman Patil"
+    ],
+
+    link: "https://docs.google.com/forms/d/e/1FAIpQLScckVZ7ltRJr_GKhUf7YBgXs1egmrEZ1iJaCJrFnIiGTf0aBw/viewform?usp=publish-editor"
+  },
+
+  "bridge-model": {
+    title: "Bridge Model Making",
+    date: "April 2026",
+    fee: "₹300 / team",
+    prize: "1st: ₹1500 | 2nd: ₹1000",
+    image: "ece1.jpg",
+
+    rules: [
+      "Maximum 3 players per team",
+      "2D line diagram will be given",
+      "Wire and white powder will be provided",
+      "Extra materials are not allowed",
+      "Organizer’s decision is final",
+      "Players cannot participate in multiple teams",
+      "First aid facility will be available",
+      "No mobile phones allowed",
+      "Only one round",
+      "All doubts must be cleared before starting",
+      "Remaining rules will be explained at venue"
+    ],
+
+    tie: "Tie breaking task will be conducted between teams",
+
+    coordinators: [
+      "Sagar J – 8147302919",
+      "Aishwarya B K – 7337696322",
+      "Bharathkumar Y – 9108431616",
+      "Anusha H – 6366246523"
+    ],
+
+    staff: [
+      "Prof. Rajendra Shettar",
+      "Prof. Arun Tandi"
+    ],
+
+    link: "https://docs.google.com/forms/d/e/1FAIpQLSe7SM8e-krZmIEF3Mta_exy4csxgiyg8ieNmVJFX7PTnEbmlQ/viewform?usp=publish-editor"
+  },
 };
 
 export default function EventDetails() {

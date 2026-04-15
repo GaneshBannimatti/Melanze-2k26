@@ -4,7 +4,7 @@ export default function Team() {
   const members = [
     {
       id: "1",
-      name: "Dr. Parashuram Barak",
+      name: "Dr. Parashuram Baraki",
       role: "Principal & Chief Mentor",
       phone: "+91 96860 42385",
       image: "/team/parashuram.jpg",

@@ -19,6 +19,8 @@ export default function Themes() {
     // ✅ NEW ECE EVENTS
     { id: "festronics", title: "FESTRONICS (ECE)", img: "/events/ece1.jpg" },
     { id: "roborace", title: "ROBORACE (ECE)", img: "/events/ece2.jpg" },
+    { id: "roadies", title: "Super Minute Games(Civil)", img: "/events/civil2.jpg" },
+    {id:"bridge-model", title: "Lineout Demonstration(Civil)", img: "/events/civil1.jpg" },
 
     // ✅ CULTURAL EVENTS
     { id: "cultural", title: "Cultural Events", img: "/events/cultural.jpg" },
