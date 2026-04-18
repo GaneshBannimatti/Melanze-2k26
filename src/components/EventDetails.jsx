@@ -458,7 +458,8 @@ const eventData = {
     staff: [
       "Prof. Ratnaprabha S – 6360522208",
       "Prof. Anupama Hongal – 7411914870"
-    ]
+    ],
+    link: "https://docs.google.com/forms/d/e/1FAIpQLSdYY7I9LjMkynz_OLj8jzYgLUJbzAt5vR_Om98oI0g0Qqx6uQ/viewform"
   },
 
   "roborace": {
@@ -489,7 +490,8 @@ const eventData = {
     staff: [
       "Prof. Amarappa Pagi – 9663338639",
       "Prof. Manjunathraddi Bentur – 8867707197"
-    ]
+    ],
+    link:"https://docs.google.com/forms/d/e/1FAIpQLSdYY7I9LjMkynz_OLj8jzYgLUJbzAt5vR_Om98oI0g0Qqx6uQ/viewform"
   },
   "roadies": {
     title: "Super Minute Games (Roadies)",
