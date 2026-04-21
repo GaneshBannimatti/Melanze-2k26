@@ -411,20 +411,20 @@ const eventData = {
 
   // ✅ CULTURAL EVENTS (SINGLE PAGE)
 
-  "cultural": {
-    title: "Cultural Events",
-    date: "April 2026",
-    fee: "Varies per event",
-    prize: "Certificates + Prizes",
+  cultural: {
+  title: "Cultural Events",
+  date: "25 April 2026, 4 PM onwards",
+  fee: "Varies per event",
+  prize: "Certificates + Prizes",
 
-    rules: [
-      "Singing (Solo) – ₹300",
-      "Dance (Solo) – ₹500",
-      "Skit / Mime – ₹500 per group",
-      "Instrumental (Solo) – ₹300",
-      "Instrumental (Group) – ₹700 per group",
-      "Fashion Show – ₹1000 per group",
-    ],
+  rules: [
+    "Singing (Solo) – ₹250",
+    "Dance (Solo) – ₹250",
+    "Dance (Group) – ₹350",
+    "Skit / Mime – ₹350 per group",
+    "Fashion Show (Theme Based) – ₹650 per group"
+  ],
+
 
     coordinators: [
       "Prof. Shambulingappa – 9686634981",
